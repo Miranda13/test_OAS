@@ -7,8 +7,8 @@ module.exports = function (databaseConfig) {
     let model = general.getDatabaseModel();
     
 
-    //{{SERVER}}/grupos/ 
-    //Lista todos los grupos
+    //{{SERVER}}/partidos/ 
+    //Lista todos los partidos
     router.get('/', function (request, response) {
        model.getAll(TABLE)
             .then((rows) => {
@@ -19,8 +19,8 @@ module.exports = function (databaseConfig) {
             });
     });
 
-    //{{SERVER}}/grupos/id 
-    //Trae un grupo por ID
+    //{{SERVER}}/partidos/id 
+    //Trae un partido por ID
     router.get('/:id', function (request, response) {
         let id = request.params.id;
         model.getById(TABLE, id)
@@ -32,8 +32,8 @@ module.exports = function (databaseConfig) {
             });
     });
 
-    //{{SERVER}}/grupos/
-    //Crea un grupo
+    //{{SERVER}}/partidos/
+    //Crea un partido
     router.post('/', function (request, response) {
         model.create(TABLE, request.body)
             .then((object) => {
@@ -44,8 +44,8 @@ module.exports = function (databaseConfig) {
             });
     });
 
-    //{{SERVER}}/grupos/:id
-    //Edita un grupo
+    //{{SERVER}}/partidos/:id
+    //Edita un partido
     router.put('/:id', function (request, response) {
         let id = request.params.id;
         model.update(TABLE, request.body, id)
@@ -58,8 +58,8 @@ module.exports = function (databaseConfig) {
     });
 
 
-    //{{SERVER}}/grupos/id
-    //Elimina un grupo
+    //{{SERVER}}/partidos/id
+    //Elimina un partido
     router.delete('/:id', function (request, response) {
         let id = request.params.id;
             model.delete(TABLE, id)
@@ -72,7 +72,7 @@ module.exports = function (databaseConfig) {
     });
 
 
-    //{{SERVER}}/grupos/delete_grupos
+    //{{SERVER}}/partidos/delete_partidos
     //Limpiar tabla
     router.get('/option/clean', function (request, response) {
         model.clean(TABLE)

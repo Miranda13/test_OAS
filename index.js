@@ -10,14 +10,16 @@ app.use(cors());
 //URL Encode Support for POST, PUT Methods
 const bodyParser = require('body-parser');
 
-let gruposController = require('./app/controllers/grupos')()
-
+let gruposController = require('./app/controllers/grupos')();
+let partidosController = require('./app/controllers/partidos')();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //{{SERVER}}/grupos/
-app.use('/grupos', usersController);
+app.use('/grupos', gruposController);
+
+app.use('/partidos', partidosController);
 
 app.get('/', (request, response) => {
     response.send('Bienvenido a la API de ' + config.app.name);
