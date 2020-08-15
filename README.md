@@ -1,3 +1,10 @@
-# test_OAS
-test to OAS
+# Aplication back to test OAS
+
+clone
+
+install:
+
+node modules: npm install
+
+star: npm start
 
