@@ -1,0 +1,12 @@
+{
+    "app": {
+        "name": "Test OAS",
+        "port": 4000
+    },
+    "database":{
+        "mongodb":{
+            "databaseName":"myproject",
+            "url":"mongodb://localhost:27017"
+        }
+    }
+}
