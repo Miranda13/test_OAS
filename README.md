@@ -6,5 +6,5 @@ install:
 
 node modules: npm install
 
-star: npm start
+start: npm start
 
